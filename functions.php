@@ -127,6 +127,16 @@ function cabin_php_scripts() {
 add_action( 'wp_enqueue_scripts', 'cabin_php_scripts' );
 
 /**
+* load google fonts
+*/
+function load_fonts() {
+    wp_register_style('et-googleFonts', 'https://fonts.googleapis.com/css?family=Arvo:400,700|Open+Sans:400,700|Open+Sans+Condensed:300');
+    wp_enqueue_style( 'et-googleFonts');
+}
+add_action('wp_print_styles', 'load_fonts'); 
+
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
