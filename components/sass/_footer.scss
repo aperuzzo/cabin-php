@@ -1,0 +1,25 @@
+.site-info {
+	z-index: 5;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: hsla(0, 0%, 0%, 0.61);
+	padding: 10px 0;
+
+	a {
+		font-size: 15px;
+		padding: 0 10px;
+		color: hsla(360, 100%, 100%, 0.62);
+	}
+
+	p {
+		color: #fff;
+		margin: 0 15px 0 0;
+		float: right;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		font-size: 10px;
+
+	}
+}

@@ -1,0 +1,28 @@
+#masthead {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+}
+
+.site-branding {
+	margin-left: 30px;
+}
+
+.site-title {
+	margin: 0;
+
+	a {
+		font-size: 2.5em;
+	}
+}
+
+.site-description {
+	margin: -39px 0 0 6px;
+	font-size: 29px;
+}
+
+.site-header a, .site-description {
+	color: #fff;
+}
