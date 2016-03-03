@@ -76,6 +76,26 @@ function cabin_php_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	register_post_type( 'cabin', 
+		array(
+			'labels' => array(
+				'name' => __( 'Cabins' ),
+				'singular_name' => __( 'Cabin' ),
+				'add_new_item' => __( 'Add New Cabin' )
+			),
+			'public' => true,
+			'menu_position' => 5,
+			'query_var' => true,
+			'supports' => array( 
+				'title', 
+				'editor', 
+				'excerpt', 
+				'thumbnail' ,
+			),
+			'capability_type' => 'post',
+		)
+	);
 }
 endif;
 add_action( 'after_setup_theme', 'cabin_php_setup' );
@@ -120,11 +140,25 @@ function cabin_php_scripts() {
 
 	wp_enqueue_script( 'cabin_php-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'ca]bin_php-custom-scripts', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ) );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cabin_php_scripts' );
+
+/**
+* load fonts
+*/
+function load_fonts() {
+    wp_register_style('et-googleFonts', 'https://fonts.googleapis.com/css?family=Arvo:400,700|Open+Sans:400,700|Open+Sans+Condensed:300');
+    wp_enqueue_style( 'et-googleFonts');
+    wp_register_style('et-socialFonts', 'https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css');
+    wp_enqueue_style( 'et-socialFonts');
+}
+add_action('wp_print_styles', 'load_fonts'); 
+
 
 /**
  * Implement the Custom Header feature.

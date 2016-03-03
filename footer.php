@@ -15,9 +15,13 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'cabin_php' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'cabin_php' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'cabin_php' ), 'cabin_php', '<a href="http://anthonyperuzzo.com" rel="designer">Anthony Peruzzo</a>' ); ?>
+			<a class="socicon-tumblr" href="#"></a>
+			<a class="socicon-twitter" href="#"></a>
+			<a class="socicon-pinterest" href="#"></a>
+			<a class="socicon-facebook" href="#"></a>
+
+			<p>&copy; copyright Sanctuary Eco-Retreat 2014</p>
+
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

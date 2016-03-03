@@ -26,9 +26,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Typography
 # Elements
 # Forms
+# Layout
+	## content-home
 # Navigation
 	## Links
 	## Menus
+# Header
+# Footer
 # Accessibility
 # Alignments
 # Clearings
@@ -270,7 +274,7 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "Open Sans";
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -278,6 +282,11 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
+  font-family: "Arvo";
+}
+
+.site-description {
+  font-family: "Open Sans Condensed";
 }
 
 p {
@@ -503,6 +512,169 @@ textarea {
 }
 
 /*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+#home-slideshow {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+#home-slideshow li {
+  list-style-type: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+#home-slideshow li div {
+  color: #fff;
+}
+#home-slideshow li div h2, #home-slideshow li div p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#home-slideshow li div h2 {
+  text-transform: uppercase;
+  font-size: 30px;
+}
+#home-slideshow li div p {
+  font-family: "Open Sans Condensed";
+  font-size: 48px;
+}
+#home-slideshow #homepage1 {
+  position: absolute;
+  top: 75%;
+  left: 65%;
+}
+#home-slideshow #homepage1 p {
+  margin-top: -32px;
+  margin-left: 107px;
+}
+#home-slideshow #homepage2 {
+  position: absolute;
+  top: 50%;
+  left: 21%;
+}
+#home-slideshow #homepage2 p {
+  margin-top: -34px;
+  margin-left: -76px;
+}
+#home-slideshow #homepage3 {
+  position: absolute;
+  top: 83%;
+  left: 48%;
+  color: #000;
+}
+#home-slideshow #homepage3 p {
+  margin-top: -34px;
+  margin-left: 55px;
+}
+#home-slideshow #homepage4 {
+  position: absolute;
+  top: 75%;
+  left: 65%;
+}
+#home-slideshow #homepage4 p {
+  margin-top: -34px;
+  margin-left: -407px;
+}
+#home-slideshow #homepage5 {
+  position: absolute;
+  top: 60%;
+  left: 7%;
+}
+#home-slideshow #homepage5 p {
+  margin-top: -34px;
+  margin-left: -9px;
+}
+#home-slideshow li.current {
+  z-index: 2;
+}
+#home-slideshow li.previous {
+  z-index: 1;
+}
+
+.cabin-gallery {
+  width: 55%;
+  height: 100%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+.cabin-gallery ul {
+  margin: 0;
+  list-style-type: none;
+}
+.cabin-gallery ul.gallery-img {
+  float: right;
+  height: 100%;
+}
+.cabin-gallery ul.gallery-img li {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.cabin-gallery ul.gallery-img li img {
+  height: 350px;
+}
+.cabin-gallery ul.gallery-img li:first-child {
+  z-index: 1;
+}
+.cabin-gallery ul.gallery-thumbs {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 20%;
+  margin-bottom: 10px;
+}
+.cabin-gallery ul.gallery-thumbs li {
+  display: inline;
+  height: 100%;
+  margin-left: 15px;
+}
+.cabin-gallery ul.gallery-thumbs li img {
+  height: 70%;
+}
+
+.cabin-info {
+  width: 45%;
+  float: left;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+.cabin-info a {
+  color: #396b00;
+  font-weight: bold;
+}
+.cabin-info h1 {
+  margin-top: 0;
+}
+.cabin-info button {
+  background-color: #396b00;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 10px;
+  text-shadow: none;
+}
+.cabin-info button a {
+  color: #fff;
+  font-weight: normal;
+}
+
+.cabin-title {
+  font-size: 20px;
+}
+
+/*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -510,6 +682,7 @@ textarea {
 --------------------------------------------------------------*/
 a {
   color: royalblue;
+  text-decoration: none;
 }
 a:visited {
   color: purple;
@@ -527,11 +700,27 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+#tri-up {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 33px solid #c4c4c4;
+  margin-left: 114px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 .main-navigation {
   clear: both;
   display: block;
   float: left;
   width: 100%;
+  background: rgba(0, 0, 0, 0.61);
+  padding: 33px 0 33px 450px;
+  margin-top: -67px;
 }
 .main-navigation ul {
   display: none;
@@ -540,22 +729,37 @@ a:hover, a:active {
   padding-left: 0;
 }
 .main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
   position: absolute;
   top: 1.5em;
   left: -999em;
   z-index: 99999;
+  width: 275px;
+  margin-left: -75px;
 }
 .main-navigation ul ul ul {
   left: -999em;
   top: 0;
 }
+.main-navigation ul ul li {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #a6a6a6;
+  background: #c4c4c4;
+  padding: 0;
+}
+.main-navigation ul ul li :hover {
+  background: #a6a6a6;
+}
 .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
   left: 100%;
 }
+.main-navigation ul ul li a {
+  color: #000;
+  padding: 10px 0;
+}
 .main-navigation ul ul a {
-  width: 200px;
+  width: 100%;
 }
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
@@ -564,10 +768,13 @@ a:hover, a:active {
 .main-navigation li {
   float: left;
   position: relative;
+  padding: 0 10px;
 }
 .main-navigation a {
   display: block;
   text-decoration: none;
+  font-family: "Arvo";
+  text-transform: uppercase;
 }
 
 /* Small menu. */
@@ -603,6 +810,63 @@ a:hover, a:active {
   float: right;
   text-align: right;
   width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#masthead {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.site-branding {
+  margin-left: 30px;
+}
+
+.site-title {
+  margin: 0;
+}
+.site-title a {
+  font-size: 2.5em;
+}
+
+.site-description {
+  margin: -39px 0 0 6px;
+  font-size: 29px;
+}
+
+.site-header a, .site-description {
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.site-info {
+  z-index: 5;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.61);
+  padding: 10px 0;
+}
+.site-info a {
+  font-size: 15px;
+  padding: 0 10px;
+  color: rgba(255, 255, 255, 0.62);
+}
+.site-info p {
+  color: #fff;
+  margin: 0 15px 0 0;
+  float: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -729,7 +993,6 @@ a:hover, a:active {
 }
 
 .page-content,
-.entry-content,
 .entry-summary {
   margin: 1.5em 0 0;
 }
@@ -737,6 +1000,35 @@ a:hover, a:active {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+#primary {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: url("images/background.jpg") no-repeat top;
+  background-size: cover;
+}
+
+#main {
+  height: 70%;
+  background: #fff;
+  margin-top: 146px;
+  padding: 15px 0;
+}
+#main h1 {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+#main p {
+  margin-top: 0;
+  line-height: 1.2;
+  margin-bottom: 1em;
+  font-size: 13px;
 }
 
 /*--------------------------------------------------------------
