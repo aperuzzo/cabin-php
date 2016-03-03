@@ -7,12 +7,13 @@ jQuery( window ).load(function() {
 	jQuery('.sub-menu').prepend('<div id="tri-up"></div>');
 
 	// calls function 
-	jQuery(".sub-menu *").bold("painters", "bold");// 'painters' is the specified string, bold is the class
+	jQuery(".sub-menu *").bold("painter’s", "bold");// 'painters' is the specified string, bold is the class
 	jQuery(".sub-menu *").bold("ceramics", "bold");
 	jQuery(".sub-menu *").bold("writers", "bold");
 	jQuery(".sub-menu *").bold("musicians", "bold");
 	jQuery(".sub-menu *").bold("drawing", "bold");
+	jQuery('h1').bold("painter’s", "bold");
 
 	setInterval('rotateImages()', 5000);// interval time for slideshow on front page
-
+	galleryHover();
 });

@@ -76,6 +76,26 @@ function cabin_php_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	register_post_type( 'cabin', 
+		array(
+			'labels' => array(
+				'name' => __( 'Cabins' ),
+				'singular_name' => __( 'Cabin' ),
+				'add_new_item' => __( 'Add New Cabin' )
+			),
+			'public' => true,
+			'menu_position' => 5,
+			'query_var' => true,
+			'supports' => array( 
+				'title', 
+				'editor', 
+				'excerpt', 
+				'thumbnail' ,
+			),
+			'capability_type' => 'post',
+		)
+	);
 }
 endif;
 add_action( 'after_setup_theme', 'cabin_php_setup' );

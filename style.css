@@ -601,6 +601,80 @@ textarea {
   z-index: 1;
 }
 
+.cabin-gallery {
+  width: 55%;
+  height: 100%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+.cabin-gallery ul {
+  margin: 0;
+  list-style-type: none;
+}
+.cabin-gallery ul img {
+  height: 100%;
+}
+.cabin-gallery ul.gallery-img {
+  float: right;
+  height: 100%;
+}
+.cabin-gallery ul.gallery-img li {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 75%;
+}
+.cabin-gallery ul.gallery-img li:first-child {
+  z-index: 1;
+}
+.cabin-gallery ul.gallery-thumbs {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 20%;
+  margin-bottom: 10px;
+}
+.cabin-gallery ul.gallery-thumbs li {
+  display: inline;
+  height: 100%;
+  margin-left: 15px;
+}
+.cabin-gallery ul.gallery-thumbs li img {
+  height: 70%;
+}
+
+.cabin-info {
+  width: 45%;
+  float: left;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+.cabin-info a {
+  color: #396b00;
+  font-weight: bold;
+}
+.cabin-info h1 {
+  margin-top: 0;
+}
+.cabin-info button {
+  background-color: #396b00;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 10px;
+  text-shadow: none;
+}
+.cabin-info button a {
+  color: #fff;
+  font-weight: normal;
+}
+
+.cabin-title {
+  font-size: 20px;
+}
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -743,7 +817,7 @@ a:hover, a:active {
 # Header
 --------------------------------------------------------------*/
 #masthead {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -920,7 +994,6 @@ a:hover, a:active {
 }
 
 .page-content,
-.entry-content,
 .entry-summary {
   margin: 1.5em 0 0;
 }
@@ -928,6 +1001,35 @@ a:hover, a:active {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+#primary {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: url("images/background.jpg") no-repeat top;
+  background-size: cover;
+}
+
+#main {
+  height: 70%;
+  background: #fff;
+  margin-top: 146px;
+  padding: 15px 0;
+}
+#main h1 {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+#main p {
+  margin-top: 0;
+  line-height: 1.2;
+  margin-bottom: 1em;
+  font-size: 13px;
 }
 
 /*--------------------------------------------------------------

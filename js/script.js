@@ -1,6 +1,17 @@
 
 
 //---------------------------------------------
+function galleryHover(){
+	jQuery('.gallery-thumbs li').mouseenter( function(){
+		//grab class name
+		var imgClass = this.className;
+		//make sure all images are showing
+		jQuery('.gallery-img li').show();
+		// hide all imgs not of the same class as thumb
+		jQuery('.gallery-img li' ).not('.' + imgClass).hide();
+	});
+			
+}
 
 
 jQuery( window ).load(function() {
@@ -10,14 +21,15 @@ jQuery( window ).load(function() {
 	jQuery('.sub-menu').prepend('<div id="tri-up"></div>');
 
 	// calls function 
-	jQuery(".sub-menu *").bold("painters", "bold");// 'painters' is the specified string, bold is the class
+	jQuery(".sub-menu *").bold("painter’s", "bold");// 'painters' is the specified string, bold is the class
 	jQuery(".sub-menu *").bold("ceramics", "bold");
 	jQuery(".sub-menu *").bold("writers", "bold");
 	jQuery(".sub-menu *").bold("musicians", "bold");
 	jQuery(".sub-menu *").bold("drawing", "bold");
+	jQuery('h1').bold("painter’s", "bold");
 
 	setInterval('rotateImages()', 5000);// interval time for slideshow on front page
-
+	galleryHover();
 });
 
 //the function below was leveraged from http://www.gotoquiz.com/web-coding/programming/javascript/highlight-words-in-text-with-jquery/
