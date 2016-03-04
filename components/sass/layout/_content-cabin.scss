@@ -10,13 +10,12 @@
 		margin: 0;
 		list-style-type: none;
 
-		// img {
-		// 	height: 100%;
-		// }
+		img {
+			height: 100%;
+		}
 	}
 
 	ul.gallery-img {
-		float: right;
 		height: 100%;
 
 
@@ -24,10 +23,11 @@
 			position: absolute;
 			top: 0;
 			right: 0;
+			height: 70%;
 
 			img {
-				height: 350px;
-			}	
+				float: right;
+			}
 
 		}
 
@@ -42,14 +42,16 @@
 		right: 0;
 		height: 20%;
 		margin-bottom: 10px;
+		
 
 		li {
-			display: inline;
+			display: inline-block;
 			height: 100%;
 			margin-left: 15px;
 
 			img {
 				height: 70%;
+				
 			}
 
 		}
@@ -90,5 +92,5 @@
 }
 
 .cabin-title {
-	font-size: 20px;
+	font-size: 15px;
 }

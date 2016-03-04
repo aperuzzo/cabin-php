@@ -613,17 +613,20 @@ textarea {
   margin: 0;
   list-style-type: none;
 }
+.cabin-gallery ul img {
+  height: 100%;
+}
 .cabin-gallery ul.gallery-img {
-  float: right;
   height: 100%;
 }
 .cabin-gallery ul.gallery-img li {
   position: absolute;
   top: 0;
   right: 0;
+  height: 70%;
 }
 .cabin-gallery ul.gallery-img li img {
-  height: 350px;
+  float: right;
 }
 .cabin-gallery ul.gallery-img li:first-child {
   z-index: 1;
@@ -636,7 +639,7 @@ textarea {
   margin-bottom: 10px;
 }
 .cabin-gallery ul.gallery-thumbs li {
-  display: inline;
+  display: inline-block;
   height: 100%;
   margin-left: 15px;
 }
@@ -671,7 +674,7 @@ textarea {
 }
 
 .cabin-title {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 /*--------------------------------------------------------------
@@ -1018,7 +1021,7 @@ a:hover, a:active {
   height: 70%;
   background: #fff;
   margin-top: 146px;
-  padding: 15px 0;
+  padding: 30px 0;
 }
 #main h1 {
   text-transform: uppercase;
